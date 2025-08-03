@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Кровать с подъемным механизмом",
+    "price": 124850,
+    "description": "Комфортная кровать с подъемным механизмом для дополнительного хранения. Размеры: 200x160 см. Материал: массив дуба.",
+    "image": "https://davitamebel.ru/upload/resize_cache/product/841_631_1/02cb310b-bec8-11eb-b99e-00155d00bf04__0000047506_kashemir-900.21/photo_00__0000047506_kashemir-900.21_krovat-s-podemnym-mekhanizmom.jpg?1737119367",
+    "category": "Спальня"
+  },
+  {
+    "id": "2",
+    "name": "Качеля гнездо GEMINI",
+    "price": 43962,
+    "description": "Подвесное двухместное кресло для комфортного отдыха. Максимальная нагрузка: 250 кг. Материал: искусственный ротанг.",
+    "image": "https://avatars.mds.yandex.net/i?id=1d6eb83fb82e43242883016443a93260_l-12527471-images-thumbs&n=13",
+    "category": "Садовая мебель"
+  },
+  {
+    "id": "3",
+    "name": "Стол компьютерный кл-9.1",
+    "price": 5150,
+    "description": "Удобный компьютерный стол с полкой для клавиатуры. Размеры: 120x60x75 см. Материал: ЛДСП.",
+    "image": "https://komfort-m30.ru/files/products/stol-kompyuternyi-zheltyi.800x600.png",
+    "category": "Офисная мебель"
+  }
+]

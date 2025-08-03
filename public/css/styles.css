@@ -1,0 +1,121 @@
+:root {
+    --orange: #ff8000;
+    --orange-dark: #e67300;
+    --light: #f8f9fa;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-orange {
+    background-color: var(--orange) !important;
+}
+
+.text-orange {
+    color: var(--orange) !important;
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-dark);
+    border-color: var(--orange-dark);
+    color: white;
+}
+
+.btn-outline-orange {
+    color: var(--orange);
+    border-color: var(--orange);
+}
+
+.btn-outline-orange:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+.hero-banner {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+        url('https://www.ikea.com/images/home-page-background-1a2b3c4d5e6f7g8h9i0j.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a {
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ddd !important;
+}
+
+.nav-link {
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ddd !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-banner .col-md-6:first-child {
+        margin-bottom: 2rem;
+    }
+
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Стили для страницы политики */
+.privacy-content h2 {
+    color: #ff8000;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.privacy-content ul {
+    padding-left: 1.5rem;
+}
+
+.privacy-content li {
+    margin-bottom: 0.5rem;
+}
+
+.card-header h1 {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 768px) {
+    .privacy-content h2 {
+        font-size: 1.25rem;
+    }
+}

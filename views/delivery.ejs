@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include('partials/head', { title: 'Доставка | Интерьер' }) %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <div class="container my-5">
+                <h1 class="mb-4">Условия доставки</h1>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <img src="https://www.ikea.com/images/delivery-banner-1a2b3c4d5e6f7g8h9i0j.jpg"
+                                    class="img-fluid rounded mb-4" alt="Доставка">
+
+                                <p>Мы предлагаем несколько удобных способов доставки по всей России. Вы можете выбрать
+                                    наиболее подходящий вариант при оформлении заказа.</p>
+
+                                <h3 class="mt-4">Способы доставки:</h3>
+                                <ul>
+                                    <li><strong>Курьерская доставка</strong> - по Москве в течение 1-2 дней</li>
+                                    <li><strong>Курьерская доставка</strong> - по России в течение 10 дней</li>
+                                    <li><strong>Самовывоз</strong> - по нашему адресу в Москве</li>
+                                </ul>
+
+                                <h3 class="mt-4">Стоимость доставки:</h3>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Способ доставки</th>
+                                                <th>Срок</th>
+                                                <th>Стоимость</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Курьер (Москва)</td>
+                                                <td>1-2 дня</td>
+                                                <td>Бесплатно</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Курьер (Россия)</td>
+                                                <td>1-10 дней</td>
+                                                <td>От 1000 руб</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Самовывоз</td>
+                                                <td>В день заказа</td>
+                                                <td>Бесплатно</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="alert alert-info mt-4">
+                                    <strong>Акция!</strong> Бесплатная доставка при заказе от 50 000 рублей по всей
+                                    России.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-header bg-orange text-white">
+                                <h4 class="mb-0">Оплата</h4>
+                            </div>
+                            <div class="card-body">
+                                <h5>Способы оплаты:</h5>
+                                <ul>
+                                    <li>Наличными курьеру</li>
+                                    <li>Банковской картой (Visa, Mastercard, Мир)</li>
+                                    <li>Онлайн-оплата на сайте</li>
+                                    <li>Безналичный расчет для юридических лиц</li>
+                                </ul>
+
+                                <div class="d-flex flex-wrap mt-3">
+                                    <img src="https://via.placeholder.com/60x40.png?text=Visa" alt="Visa"
+                                        class="me-2 mb-2">
+                                    <img src="https://via.placeholder.com/60x40.png?text=MC" alt="Mastercard"
+                                        class="me-2 mb-2">
+                                    <img src="https://via.placeholder.com/60x40.png?text=МИР" alt="Мир"
+                                        class="me-2 mb-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header bg-orange text-white">
+                                <h4 class="mb-0">Пункт выдачи</h4>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Адрес:</strong> г. Москва, ул Бумажная д.66</p>
+                                <p><strong>Режим работы:</strong> Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-20:00</p>
+                                <p><strong>Телефон:</strong> 8 999 741 22 33</p>
+                                <a href="/contacts" class="btn btn-outline-orange w-100 mt-2">На карте</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('partials/footer') %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

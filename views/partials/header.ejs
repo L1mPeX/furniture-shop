@@ -1,0 +1,32 @@
+<header class="bg-orange py-3">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="https://via.placeholder.com/50x50.png?text=Logo" alt="Логотип" class="me-3">
+                <h1 class="m-0 text-white fw-bold">ИНТЕРЬЕР</h1>
+            </div>
+
+            <nav class="d-none d-md-block">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="/">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/catalog">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/sales">Акции</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="d-flex align-items-center">
+                <% if (user) { %>
+                    <span class="text-white me-3">Привет, <%= user.username %></span>
+                    <a href="/cart" class="btn btn-light btn-sm me-2">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <a href="/logout" class="btn btn-outline-light btn-sm">Выйти</a>
+                    <% } else { %>
+                        <a href="/login" class="btn btn-outline-light btn-sm me-2">Войти</a>
+                        <a href="/register" class="btn btn-light btn-sm">Регистрация</a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</header>

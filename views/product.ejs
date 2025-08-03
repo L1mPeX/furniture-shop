@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include('partials/head', { title: product.name + ' | Интерьер' }) %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <div class="container my-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="/catalog">Каталог</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <%= product.name %>
+                        </li>
+                    </ol>
+                </nav>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="<%= product.image %>" class="img-fluid rounded" alt="<%= product.name %>">
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <img src="<%= product.image %>" class="img-thumbnail" alt="<%= product.name %>">
+                            </div>
+                            <div class="col-3">
+                                <img src="<%= product.image %>" class="img-thumbnail" alt="<%= product.name %>">
+                            </div>
+                            <div class="col-3">
+                                <img src="<%= product.image %>" class="img-thumbnail" alt="<%= product.name %>">
+                            </div>
+                            <div class="col-3">
+                                <img src="<%= product.image %>" class="img-thumbnail" alt="<%= product.name %>">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h1>
+                            <%= product.name %>
+                        </h1>
+                        <p class="text-muted">
+                            <%= product.category %>
+                        </p>
+                        <h2 class="text-orange my-4">
+                            <%= product.price.toLocaleString() %> руб.
+                        </h2>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span class="ms-1">4.5 (12 отзывов)</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span class="ms-1">В наличии</span>
+                            </div>
+                        </div>
+
+                        <p>
+                            <%= product.description %>
+                        </p>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="input-group me-3" style="width: 120px;">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="text" class="form-control text-center" value="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </div>
+                            <form action="/cart/add" method="post" class="flex-grow-1">
+                                <input type="hidden" name="productId" value="<%= product.id %>">
+                                <button type="submit" class="btn btn-orange btn-lg w-100">
+                                    <i class="fas fa-cart-plus me-2"></i>Добавить в корзину
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                Характеристики
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Материал:</span>
+                                    <span>Дерево, металл</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Цвет:</span>
+                                    <span>Белый, коричневый</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Гарантия:</span>
+                                    <span>2 года</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Страна:</span>
+                                    <span>Россия</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <ul class="nav nav-tabs" id="productTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#description">Описание</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#specs">Характеристики</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#reviews">Отзывы</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content p-3 border border-top-0 rounded-bottom">
+                        <div class="tab-pane fade show active" id="description">
+                            <p>
+                                <%= product.description %>
+                            </p>
+                            <p>Дополнительное описание товара и его преимуществ. Можно указать особенности использования
+                                и ухода за изделием.</p>
+                        </div>
+                        <div class="tab-pane fade" id="specs">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Материал</td>
+                                        <td>Дерево, металл</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Цвет</td>
+                                        <td>Белый, коричневый</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Габариты</td>
+                                        <td>200x160x50 см</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вес</td>
+                                        <td>45 кг</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="reviews">
+                            <div class="mb-4">
+                                <h5>Оставьте отзыв</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">Ваше имя</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Оценка</label>
+                                        <div>
+                                            <i class="far fa-star text-warning fs-4"></i>
+                                            <i class="far fa-star text-warning fs-4"></i>
+                                            <i class="far fa-star text-warning fs-4"></i>
+                                            <i class="far fa-star text-warning fs-4"></i>
+                                            <i class="far fa-star text-warning fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Отзыв</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-orange">Отправить</button>
+                                </form>
+                            </div>
+
+                            <div class="border-top pt-3">
+                                <div class="d-flex mb-3">
+                                    <div class="flex-shrink-0">
+                                        <img src="https://via.placeholder.com/64" class="rounded-circle" alt="Аватар">
+                                    </div>
+                                    <div class="ms-3">
+                                        <h6>Иван Иванов</h6>
+                                        <div class="mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                        <p>Отличный товар, полностью соответствует описанию. Качество на высоте!</p>
+                                        <small class="text-muted">Опубликовано 2 недели назад</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('partials/footer') %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

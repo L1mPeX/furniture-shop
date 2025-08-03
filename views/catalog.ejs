@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include('partials/head', { title: 'Каталог мебели | Интерьер' }) %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card mb-4">
+                            <div class="card-header bg-orange text-white">
+                                Категории
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="/catalog" class="text-dark <%= !currentCategory ? 'fw-bold' : '' %>">
+                                        Все товары
+                                    </a>
+                                </li>
+                                <% categories.forEach(cat=> { %>
+                                    <li class="list-group-item">
+                                        <a href="/catalog?category=<%= encodeURIComponent(cat) %>"
+                                            class="text-dark <%= currentCategory === cat ? 'fw-bold' : '' %>">
+                                            <%= cat %>
+                                        </a>
+                                    </li>
+                                    <% }); %>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header bg-orange text-white">
+                                Фильтры
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">Цена</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="number" class="form-control" placeholder="От">
+                                            </div>
+                                            <div class="col">
+                                                <input type="number" class="form-control" placeholder="До">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-orange w-100">Применить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h1 class="mb-0">
+                                <% if (currentCategory) { %>
+                                    <%= currentCategory %>
+                                        <% } else { %>
+                                            Каталог мебели
+                                            <% } %>
+                            </h1>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    id="sortDropdown" data-bs-toggle="dropdown">
+                                    Сортировка
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">По цене (возрастание)</a></li>
+                                    <li><a class="dropdown-item" href="#">По цене (убывание)</a></li>
+                                    <li><a class="dropdown-item" href="#">По популярности</a></li>
+                                    <li><a class="dropdown-item" href="#">По новизне</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <% if (products.length===0) { %>
+                                <div class="col-12">
+                                    <div class="alert alert-info">
+                                        Товары в данной категории отсутствуют
+                                    </div>
+                                </div>
+                                <% } else { %>
+                                    <% products.forEach(product=> { %>
+                                        <div class="col-md-4 mb-4">
+                                            <div class="card h-100">
+                                                <img src="<%= product.image %>" class="card-img-top"
+                                                    alt="<%= product.name %>">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <%= product.name %>
+                                                    </h5>
+                                                    <p class="card-text text-orange fw-bold">
+                                                        <%= product.price.toLocaleString() %> руб.
+                                                    </p>
+                                                    <p class="card-text text-muted">
+                                                        <%= product.category %>
+                                                    </p>
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="/product/<%= product.id %>"
+                                                            class="btn btn-outline-orange">Подробнее</a>
+                                                        <form action="/cart/add" method="post">
+                                                            <input type="hidden" name="productId"
+                                                                value="<%= product.id %>">
+                                                            <button type="submit" class="btn btn-orange">
+                                                                <i class="fas fa-cart-plus"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('partials/footer') %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

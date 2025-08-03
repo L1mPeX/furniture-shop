@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include('partials/head', { title: 'Акции | Интерьер' }) %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <div class="container my-5">
+                <h1 class="mb-4">Акции и скидки</h1>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <img src="https://www.ikea.com/images/sale-banner-1a2b3c4d5e6f7g8h9i0j.jpg"
+                                        class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Акция">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Распродажа</h3>
+                                        <p class="card-text">Скидки до 50% на старые коллекции мебели. Только до конца
+                                            месяца!</p>
+                                        <p class="card-text"><small class="text-muted">Акция действует до
+                                                31.12.2025</small></p>
+                                        <a href="/catalog" class="btn btn-orange">Смотреть товары</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <img src="https://www.ikea.com/images/sale-banner-2a3b4c5d6e7f8g9h0i1j.jpg"
+                                        class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Акция">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Бесплатная доставка</h3>
+                                        <p class="card-text">Бесплатная доставка при заказе от 50 000 рублей по всей
+                                            России.</p>
+                                        <p class="card-text"><small class="text-muted">Акция действует постоянно</small>
+                                        </p>
+                                        <a href="/delivery" class="btn btn-orange">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-5 mb-4">Товары со скидкой</h2>
+                <div class="row">
+                    <% const
+                        popularProducts=[{id:1,name:'Кровать',price:124850,image:'https://davitamebel.ru/upload/resize_cache/product/841_631_1/02cb310b-bec8-11eb-b99e-00155d00bf04__0000047506_kashemir-900.21/photo_00__0000047506_kashemir-900.21_krovat-s-podemnym-mekhanizmom.jpg?1737119367'},{id:2,name:'Качеля',price:43962,image:'https://mebelvia.ru/upload/iblock/9e5/9e5c4d5c1c3b7d8e0e5b8e5d5e5d5e5.jpg'}]
+                        %>
+                        <% popularProducts.forEach(product=> { %>
+                            <div class="col-md-3 mb-4">
+                                <div class="card h-100 position-relative">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        -30%
+                                    </span>
+                                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= product.name %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <span class="text-decoration-line-through text-muted me-2">
+                                                <%= (product.price * 1.3).toLocaleString() %> руб.
+                                            </span>
+                                            <span class="text-orange fw-bold">
+                                                <%= product.price.toLocaleString() %> руб.
+                                            </span>
+                                        </p>
+                                        <a href="/product/<%= product.id %>"
+                                            class="btn btn-outline-orange w-100">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
+                </div>
+            </div>
+
+            <%- include('partials/footer') %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

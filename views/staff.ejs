@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include('partials/head', { title: 'Сотрудники | Интерьер' }) %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <div class="container my-5">
+                <h1 class="mb-4">Наша команда</h1>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                class="card-img-top rounded-circle mx-auto mt-4"
+                                style="width: 150px; height: 150px; object-fit: cover;" alt="Директор">
+                            <div class="card-body">
+                                <h3 class="card-title">Иван Петров</h3>
+                                <p class="text-orange fw-bold">Директор</p>
+                                <p class="card-text">Основатель компании, отвечает за стратегическое развитие бизнеса.
+                                </p>
+                                <p class="card-text">
+                                    <a href="mailto:ivan@interier.ru" class="text-decoration-none">
+                                        <i class="fas fa-envelope me-2"></i>ivan@interier.ru
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                class="card-img-top rounded-circle mx-auto mt-4"
+                                style="width: 150px; height: 150px; object-fit: cover;" alt="Менеджер">
+                            <div class="card-body">
+                                <h3 class="card-title">Елена Смирнова</h3>
+                                <p class="text-orange fw-bold">Менеджер по продажам</p>
+                                <p class="card-text">Поможет с выбором мебели и оформлением заказа.</p>
+                                <p class="card-text">
+                                    <a href="mailto:elena@interier.ru" class="text-decoration-none">
+                                        <i class="fas fa-envelope me-2"></i>elena@interier.ru
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg"
+                                class="card-img-top rounded-circle mx-auto mt-4"
+                                style="width: 150px; height: 150px; object-fit: cover;" alt="Дизайнер">
+                            <div class="card-body">
+                                <h3 class="card-title">Алексей Иванов</h3>
+                                <p class="text-orange fw-bold">Главный дизайнер</p>
+                                <p class="card-text">Создает уникальные дизайны мебели для наших клиентов.</p>
+                                <p class="card-text">
+                                    <a href="mailto:alexey@interier.ru" class="text-decoration-none">
+                                        <i class="fas fa-envelope me-2"></i>alexey@interier.ru
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg-orange text-white">
+                        <h2 class="mb-0">Вакансии</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h3>Менеджер по продажам</h3>
+                                <p><strong>Требования:</strong></p>
+                                <ul>
+                                    <li>Опыт работы в продажах от 1 года</li>
+                                    <li>Знание мебельного ассортимента</li>
+                                    <li>Коммуникабельность</li>
+                                </ul>
+                                <p><strong>Условия:</strong></p>
+                                <ul>
+                                    <li>График 5/2</li>
+                                    <li>Официальное трудоустройство</li>
+                                    <li>Зарплата: от 50 000 руб. + %</li>
+                                </ul>
+                                <a href="mailto:hr@interier.ru" class="btn btn-orange">Отправить резюме</a>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <h3>Грузчик</h3>
+                                <p><strong>Требования:</strong></p>
+                                <ul>
+                                    <li>Физическая выносливость</li>
+                                    <li>Ответственность</li>
+                                </ul>
+                                <p><strong>Условия:</strong></p>
+                                <ul>
+                                    <li>Гибкий график</li>
+                                    <li>Официальное трудоустройство</li>
+                                    <li>Зарплата: от 40 000 руб.</li>
+                                </ul>
+                                <a href="mailto:hr@interier.ru" class="btn btn-orange">Отправить резюме</a>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info mt-3">
+                            <p>Мы всегда рады новым сотрудникам. Наши сотрудники остаются с нами надолго благодаря
+                                комфортным условиям работы и дружному коллективу.</p>
+                            <p class="mb-0">По всем вопросам трудоустройства обращайтесь по email: <a
+                                    href="mailto:hr@interier.ru">hr@interier.ru</a> или по телефону: 8 999 741 22 33
+                                (доб. 123)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('partials/footer') %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
